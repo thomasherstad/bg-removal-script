@@ -30,8 +30,10 @@ def append_filename_text(paths: list[str], old_file_ending: str, new_file_ending
     
 def remove_all_backgrounds(root_path, old_file_ending, new_file_ending, appended_text):
     paths = get_all_files(root_path, old_file_ending)
+    length = len(paths)
     new_paths = append_filename_text(paths, old_file_ending, new_file_ending, appended_text)
     for i in range(0, len(paths)):
+        print(f'Removing {i+1}/{length}')
         remove_bg(paths[i], new_paths[i]) 
     
 
